@@ -29,7 +29,7 @@ class PositionwiseFeedForward(nn.Module):
     FFN(x) = max(0, xW1 + b1)W2 + b2
     """
     def __init__(self , d_model : int, d_ff : int, dropout : float = 0.1):
-        
+        super().__init__()
         #w_1 : expansion layer , takes input of 512 and projects it to 2048 space
         self.w_1 = nn.Linear(d_model,d_ff)
         
@@ -48,8 +48,7 @@ class PositionwiseFeedForward(nn.Module):
         after_drop = self.dropout(after_relu)
         #step4 : compress back to 512
         return self.w_2(after_drop)
-    
-    
+        
 class ResidualConnection(nn.Module):
     def __init__(self, d_model : int, dropout : float):
         super().__init__()
