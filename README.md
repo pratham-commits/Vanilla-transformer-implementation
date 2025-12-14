@@ -75,7 +75,7 @@ pip install torch streamlit tokenizers datasets
 
 # 3. Train your model - change the epochs as per requirements
 python train.py
-# downloads the best .pt file, store  in the `weights/` directory.
+# download the best .pt file, store  in the `weights/` directory.
 
 # 4. Run the App
 streamlit run app.py
